@@ -12,14 +12,20 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Пользователь" Width="125" Margin="5" VerticalAlignment="Center"
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Пользователь" Width="125" Margin="5" VerticalAlignment="Center"
                        TextAlignment="Right"></TextBlock>
             <ComboBox Name="ComboUser" SelectionChanged="UpdateChart" SelectedIndex="0" Width="175" Margin="5" DisplayMemberPath="FIO"></ComboBox>
             <TextBlock Text="Тип диаграммы:" Width="125" Margin="5" VerticalAlignment="Center"
                        TextAlignment="Right"></TextBlock>
             <ComboBox Name="ComboCharTypes" SelectionChanged="UpdateChart" SelectedIndex="0" Width="175" Margin="5" ></ComboBox>
-        </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Экспорт в Excel" VerticalAlignment="Center" 
+                        Width="175" Margin="5" Name="BtnExportToExcel" Click="BtnExportToExcel_Click"></Button>
+            </StackPanel>
+            </StackPanel>
         <WindowsFormsHost Grid.Row="1" Margin="5">
             <charts:Chart x:Name="ChartPayments">
                 <charts:Chart.Legends>
